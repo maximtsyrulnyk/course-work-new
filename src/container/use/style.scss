@@ -1,6 +1,7 @@
 @use "./style2.scss";
+@use "./style1.scss" as var;
 
 .container2 {
     // оскільки змінні знаходяться не на пряму в файлі style2.scss, а в файлі style1.scss мы отримаємо помилку якщо з файлу style2.scss змінні не були експортовані за допомогою @forward
-    background-color: style2.$second-color;
+    background-color: var.$second-color;
 }

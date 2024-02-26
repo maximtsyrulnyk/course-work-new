@@ -1,5 +1,5 @@
 @use "../../lib/service.scss";
-@use "../../lib/varibles.scss";
+@use "../../lib/varibles.scss" as var;
 @use "../../component/chatItem/style.scss" as chatItem;
 @use "../../component/costItem/style.scss" as costItem;
 
@@ -33,7 +33,7 @@
     font-weight: 400;
     font-size: 16px;
     // використовуємо змінні записані в файлі varibles.scss
-    color: varibles.$secondary-text;
+    color: var.$secondary-text;
   }
   margin-bottom: 24px;
   display: grid;
@@ -50,7 +50,9 @@
   display: flex;
   justify-content: space-between;
 }
-
+@mixin spacing($gap) {
+  gap: $gap * 4px;
+}
 .chats {
   display: grid;
   // викликаючи міксин spacing з файлу service.scss задаємо відступи нашому контейнеру
@@ -72,6 +74,6 @@
   .costs-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    @include service.spacing(4);
+    @include spacing(4);
   }
 }

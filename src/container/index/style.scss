@@ -26,7 +26,7 @@
     font-weight: 600;
     font-size: 18px;
     // використовуємо змінні записані в файлі varibles.scss
-    color: varibles.$primary-text;
+    color: var.$primary-text;
   }
   // використовуючи вкладеність задаємо стилі тегу p який знаходиться в елементі з класом .title
   p {

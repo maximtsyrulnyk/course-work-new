@@ -1,0 +1,90 @@
+@function content($value, $num)
+{
+  // $text: "Hello" + " " + $value;
+  // @return $value != 'Hello' and $num == 10;
+  @if $num == 10 or $value == 'Hello' {
+    @return 10px;
+  }
+  @if $num == 20 {
+    @return 100px;
+  }
+}
+
+@function fontSize()
+{
+  @return 20;
+}
+
+@function spacing($num) {
+  @return #{$num * 4}px;
+}
+
+@function calcCenter($size) {
+  @return calc(50% + ($size / 2));
+}
+
+@function getIcon($name) {
+  $icon: '';
+  @if($name == 'burger') {
+    $icon: '/icon/header/burger.svg';
+  }
+
+  @if($name == 'user') {
+    $icon: '/icon/dashboard/user.svg'; 
+  }
+
+  @return url(#{$icon});
+}
+
+@mixin button($type: null, $size: null) {
+  display: inline-block;
+  width: fit-content;
+  border-radius: 12px;
+  text-align: center;
+
+  @if $type == 'primary' {
+    background-color: aqua;
+  } @else if $type == 'secondary' {
+    background-color: rgb(205, 255, 79);
+  }@else {
+    background-color: red;
+
+  }
+  
+  @if $size == 'big' {
+    padding: spacing(4) spacing(6);
+  } @else if $size == 'small' {
+    padding: spacing(1) spacing(2);
+  } @else {
+    padding: spacing(2) spacing(4);
+  }
+  @if $type == $size {
+    @error 'Type не може бути як Size';
+  }
+  
+}
+
+.wrapper::after {
+  content: "World";
+  background-image: getIcon('user');
+  font-size: #{fontSize()}px;
+  position: absolute;
+  height: 40px;
+  min-width: 40px;
+  top: calcCenter(40px);
+  background: #ddd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: spacing(4);
+
+}
+
+.wrapper {
+  display: grid;
+  gap: spacing(4);
+  padding: spacing(4);
+}
+.button {
+  @include button('secondary', 'small');
+}

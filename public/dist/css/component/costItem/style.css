@@ -1,66 +1,21 @@
-.cost-item {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-}
+/* Error: Missing argument $n.
+ *   ,--> src\component\costItem\style.scss
+ * 15|     .#{nth($finance-class)} {
+ *   |        ^^^^^^^^^^^^^^^^^^^ invocation
+ *   '
+ *   ,--> sass:list
+ * 1 | @function nth($list, $n) {
+ *   |           ============== declaration
+ *   '
+ *   src\component\costItem\style.scss 15:8  root stylesheet */
 
-.cost, .earnings, .sales, .ref-earning, .balance {
-  border: 1px solid #dbe0e5;
-  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05);
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Missing argument $n.\a   \250c \2500 \2500 > src\\component\\costItem\\style.scss\a 15\2502      .#{nth($finance-class)} {\d\a   \2502         ^^^^^^^^^^^^^^^^^^^ invocation\a   \2575 \a   \250c \2500 \2500 > sass:list\a 1 \2502  @function nth($list, $n) {\a   \2502            \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501  declaration\a   \2575 \a   src\\component\\costItem\\style.scss 15:8  root stylesheet";
 }
-
-.balance {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background-color: #cef1ef;
-}
-.balance:hover {
-  opacity: 0.5;
-}
-
-.ref-earning {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background-color: #fddcdf;
-}
-.ref-earning:hover {
-  opacity: 0.5;
-}
-
-.sales {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background-color: #fcebcc;
-}
-.sales:hover {
-  opacity: 0.5;
-}
-
-.earnings {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background-color: #d4e0ff;
-}
-.earnings:hover {
-  opacity: 0.5;
-}
-
-.cost-info {
-  display: grid;
-  gap: 4px;
-}
-.cost-info p {
-  font-weight: 400;
-  color: #757e85;
-}
-.cost-info .price {
-  font-weight: 600;
-  font-size: 24px;
-  color: #1e2a35;
-}
-
-/*# sourceMappingURL=style.css.map */

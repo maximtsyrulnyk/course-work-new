@@ -1,0 +1,49 @@
+$tile-bg: #cfcfdf;
+// ==================================================
+
+//створимо цикл від 1 до 9 відповідно з кількістю дочірніх елементів
+@for $counter from 1 through  9 {
+    .tile {
+    // для кожного дочірнього елемента встановимо затримку анімації для отримання ефекту переливання, використовуючи наш лічильник затримка кожного наступного елемента буде більше
+    &:nth-child(#{$counter}) {
+      animation-delay: $counter * calc(1s / 18);
+    }
+  }
+}
+
+// ==================================================
+
+@keyframes pulse {
+  0% {
+    background: $tile-bg;
+    transform: scale(1);
+  }
+
+  25% {
+    background: darken($tile-bg, 10%);
+    transform: scale(1.015);
+  }
+
+  50% {
+    background: $tile-bg;
+    transform: scale(1);
+  }
+}
+
+.tiles {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  width: 330px;
+}
+
+.tile {
+  animation: 1s ease 0s pulse infinite;
+  background: $tile-bg;
+  border-radius: 4px;
+  float: left;
+  height: 75px;
+  margin: 5px;
+  width: 100px;
+}

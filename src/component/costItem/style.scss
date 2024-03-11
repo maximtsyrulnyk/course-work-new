@@ -7,6 +7,22 @@ $ref-earning-color: #fddcdf;
 $sales-color: #fcebcc;
 $earning-color: #d4e0ff;
 
+$finance-colors: ($balance-color, $ref-earning-color, $sales-color, $earning-color);
+$finance-class: ("balance", "ref-earning", "sales", "earnings");
+
+@for $i from 1 through 4 {
+    //
+    .#{nth($finance-class)} {
+        @include service.circle(50);
+
+        @extend .cost;
+
+        background-color: nth($finance-colors, $i);
+        border: 1px solid nth($finance-colors, $i);
+    }
+}
+
+// =======================================================================
 .cost-item {
     display: flex;
     // викликаючи міксин spacing з файлу service.scss задаємо відступи нашому контейнеру

@@ -1,22 +1,184 @@
-/* Error: Missing argument $n.
- *   ,--> src\component\costItem\style.scss
- * 15|     .#{nth($finance-class)} {
- *   |        ^^^^^^^^^^^^^^^^^^^ invocation
- *   '
- *   ,--> sass:list
- * 1 | @function nth($list, $n) {
- *   |           ============== declaration
- *   '
- *   src\component\costItem\style.scss 15:8  @use
- *   src\container\index\style.scss 4:1      root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Missing argument $n.\a   \250c \2500 \2500 > src\\component\\costItem\\style.scss\a 15\2502      .#{nth($finance-class)} {\d\a   \2502         ^^^^^^^^^^^^^^^^^^^ invocation\a   \2575 \a   \250c \2500 \2500 > sass:list\a 1 \2502  @function nth($list, $n) {\a   \2502            \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501 \2501  declaration\a   \2575 \a   src\\component\\costItem\\style.scss 15:8  @use\a   src\\container\\index\\style.scss 4:1      root stylesheet";
+.chat-item {
+  display: flex;
+  gap: 8px;
 }
+
+.avatar {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+.avatar:hover {
+  opacity: 0.5;
+}
+.avatar img {
+  width: 50px;
+}
+
+.chat-item-info {
+  display: grid;
+  gap: 8px;
+}
+
+.name {
+  font-weight: 600;
+  font-size: 16px;
+  color: #1e2a35;
+}
+
+.message {
+  font-weight: 400;
+  font-size: 16px;
+  color: #1e2a35;
+}
+
+.chip, .approved, .pending, .rejected {
+  border-radius: 5px;
+  padding: 4px 8px;
+  width: fit-content;
+  color: #fff;
+}
+
+.rejected {
+  background-color: #f64e60;
+}
+
+.pending {
+  background-color: #f64e60;
+}
+
+.approved {
+  background-color: #0bb7af;
+}
+
+.cost-item {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.cost, .earnings, .sales, .ref-earning, .balance {
+  border: 1px solid #dbe0e5;
+  box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.05);
+}
+
+.balance {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #cef1ef;
+}
+.balance:hover {
+  opacity: 0.5;
+}
+
+.ref-earning {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #fddcdf;
+}
+.ref-earning:hover {
+  opacity: 0.5;
+}
+
+.sales {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #fcebcc;
+}
+.sales:hover {
+  opacity: 0.5;
+}
+
+.earnings {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background-color: #d4e0ff;
+}
+.earnings:hover {
+  opacity: 0.5;
+}
+
+.cost-info {
+  display: grid;
+  gap: 4px;
+}
+.cost-info p {
+  font-weight: 400;
+  color: #757e85;
+}
+.cost-info .price {
+  font-weight: 600;
+  font-size: 24px;
+  color: #1e2a35;
+}
+
+.wrapper {
+  display: grid;
+  margin: 30px auto;
+  width: 60%;
+  gap: 32px;
+  padding: 8px;
+}
+
+.container {
+  background-color: #fff;
+  display: grid;
+  padding: 16px 32px;
+  border-radius: 5px;
+}
+
+.title {
+  margin-bottom: 24px;
+  display: grid;
+  gap: 4px;
+}
+.title h3 {
+  font-weight: 600;
+  font-size: 18px;
+  color: #1e2a35;
+}
+.title p {
+  font-weight: 400;
+  font-size: 16px;
+  color: #757e85;
+}
+
+.divider {
+  height: 1px;
+  width: 90%;
+  background-color: #dee2e6;
+}
+
+.costs-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chats {
+  display: grid;
+  gap: 16px;
+}
+
+@media only screen and (max-width: 1300px) {
+  .wrapper {
+    width: 80%;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .wrapper {
+    width: 100%;
+  }
+}
+@media all and (width < 800px) {
+  .costs-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
